@@ -1,3 +1,4 @@
+import 'package:blocpattern/models/lineitem.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartCubit extends Cubit<List<LineItem>> {
@@ -13,11 +14,4 @@ class CartCubit extends Cubit<List<LineItem>> {
     var items = List.of(state);
     emit(items);
   }
-}
-
-class LineItem {
-  String productId;
-  int quantity;
-
-  LineItem(this.productId, this.quantity);
 }

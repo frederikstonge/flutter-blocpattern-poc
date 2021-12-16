@@ -1,9 +1,8 @@
+import 'package:blocpattern/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'cubits/cart_cubit.dart';
-import 'cubits/home_cubit.dart';
-import 'pages/home_page.dart';
 
 void main() => runApp(const CounterApp());
 
@@ -23,13 +22,8 @@ class CounterApp extends StatelessWidget {
         ],
         child: child!,
       ),
-      routes: {
-        "/": (context) => BlocProvider(
-              create: (_) => HomeCubit(),
-              child: HomePage(),
-            ),
-      },
-      initialRoute: "/",
+      routes: AppPages.routes,
+      initialRoute: Routes.home,
     );
   }
 }

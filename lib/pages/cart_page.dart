@@ -1,3 +1,4 @@
+import 'package:blocpattern/models/lineitem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:blocpattern/cubits/cart_cubit.dart';

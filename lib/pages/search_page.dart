@@ -11,7 +11,8 @@ class SearchPage extends StatelessWidget {
     return ListView(
       children: [
         ListTile(
-          title: const Text("product"),
+          title: const Text("Product"),
+          trailing: const Icon(Icons.shopping_cart),
           onTap: () => showModalBottomSheet(
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadiusDirectional.only(
