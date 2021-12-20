@@ -1,6 +1,7 @@
 import 'package:blocpattern/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vrouter/vrouter.dart';
 
 import 'cubits/cart_cubit.dart';
 
@@ -11,7 +12,7 @@ class CounterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return VRouter(
       title: "blocpattern",
       builder: (context, child) => MultiBlocProvider(
         providers: [
@@ -20,10 +21,10 @@ class CounterApp extends StatelessWidget {
             lazy: false,
           ),
         ],
-        child: child!,
+        child: child,
       ),
       routes: AppPages.routes,
-      initialRoute: Routes.home,
+      initialUrl: Routes.home,
     );
   }
 }
