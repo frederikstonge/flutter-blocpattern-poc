@@ -1,17 +1,22 @@
 import 'package:badges/badges.dart';
 import 'package:blocpattern/models/lineitem.dart';
+import 'package:blocpattern/pages/search_page.dart';
 import 'package:blocpattern/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:blocpattern/cubits/cart_cubit.dart';
 import 'package:vrouter/vrouter.dart';
 
+import 'cart_page.dart';
+
 class HomePage extends StatelessWidget {
   final Widget child;
 
-  final List<Page> pages = [
-    Page(Paths.news, Routes.news, const Icon(Icons.new_label)),
-    Page(Paths.search, Routes.search, const Icon(Icons.search)),
+  static final List<Page> pages = [
+    Page(Paths.news, Routes.news, const Icon(Icons.new_label),
+        const Text("news")),
+    Page(Paths.search, Routes.search, const Icon(Icons.search),
+        const SearchPage()),
     Page(
       Paths.cart,
       Routes.cart,
@@ -26,10 +31,11 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      const CartPage(),
     ),
   ];
 
-  HomePage(this.child, {Key? key}) : super(key: key);
+  const HomePage(this.child, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +60,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: const Text("app"),
+        title: Text(pages[index].title),
       ),
       body: child,
       bottomNavigationBar: BottomNavigationBar(
@@ -72,6 +78,7 @@ class Page {
   String title;
   String path;
   Widget icon;
+  Widget body;
 
-  Page(this.title, this.path, this.icon);
+  Page(this.title, this.path, this.icon, this.body);
 }
