@@ -14,6 +14,7 @@ class SearchPage extends StatelessWidget {
           title: const Text("Product"),
           trailing: const Icon(Icons.shopping_cart),
           onTap: () => showModalBottomSheet(
+            useRootNavigator: true,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadiusDirectional.only(
                 topStart: Radius.circular(12),

@@ -17,6 +17,7 @@ class CartPage extends StatelessWidget {
                 title: Text(i.productId),
                 trailing: Text(i.quantity.toString()),
                 onTap: () => showModalBottomSheet(
+                  useRootNavigator: true,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadiusDirectional.only(
                       topStart: Radius.circular(12),

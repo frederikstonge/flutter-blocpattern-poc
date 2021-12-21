@@ -14,7 +14,7 @@ class AppPages {
       },
       nestedRoutes: [
         VRouteRedirector(path: '', redirectTo: HomePage.pages.first.path),
-        ...HomePage.pages.map((p) => VWidget(path: p.path, widget: p.body))
+        ...HomePage.pages.map((p) => VWidget(path: p.path, widget: p.body)),
       ],
     ),
   ];
