@@ -43,25 +43,6 @@ class HomePage extends StatelessWidget {
         pages.indexWhere((element) => element.path == context.vRouter.path);
 
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              height: 100,
-              color: Colors.red,
-            ),
-            ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                context.vRouter.to(Routes.home);
-              },
-            ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        title: Text(pages[index].title),
-      ),
       body: child,
       bottomNavigationBar: BottomNavigationBar(
         items: pages

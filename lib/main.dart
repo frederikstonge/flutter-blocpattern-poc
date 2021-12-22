@@ -24,7 +24,6 @@ class CounterApp extends StatelessWidget {
         child: child,
       ),
       routes: AppPages.routes,
-      initialUrl: Routes.home,
     );
   }
 }
